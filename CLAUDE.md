@@ -21,7 +21,7 @@
 
 ## Контекст проекта
 - Это Telegram Mini App для домашних тренировок и mobility, аудитория — русскоязычная СНГ
-- Стек: Next.js 14 (App Router) + TypeScript + Tailwind + `@telegram-apps/sdk-react`
+- Стек: Next.js 16 (App Router) + TypeScript + Tailwind + `@telegram-apps/sdk-react`
 - Деплой: Cloudflare Pages (статический экспорт)
 - БД: пока Telegram CloudStorage, без бэкенда
 - Платежи: руками первые месяцы, потом Tribute
