@@ -116,8 +116,9 @@ Telegram не проверялось. Плагин `frontend-design` устан�
 - [x] Грабли подпапки решены: `basePath`/`assetPrefix` из `NEXT_PUBLIC_BASE_PATH` (локальный
       `npm run dev` не меняется), пути к `public/` через `asset()` в `app/lib/assets.ts`,
       `.nojekyll` в сборке (иначе Pages выбрасывает `_next` и сайт открывается без стилей).
-- ⚠️ `git push` из терминала: связка ключей macOS отдаёт старый токен → 403. Рабочая команда:
-      `git -c credential.helper='!gh auth git-credential' push origin main`
+- Обновление сайта: обычный `git push origin main` — работает как есть, доступ настроен
+      (токен в связке ключей macOS, права `repo` + `workflow`). Разовая ошибка 403 при первом
+      push была из-за одновременного переключения репозитория в публичный — не повторяется.
 - [ ] Бот в @BotFather: создать, привесить Mini App на адрес выше → проверить этап 6
       (кнопка «Назад», разворот, вибро, CloudStorage) внутри реального Telegram
 - [ ] Оплата: вручную → Tribute
