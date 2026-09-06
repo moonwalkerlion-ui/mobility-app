@@ -3,6 +3,8 @@
 // лежат в public/covers/. Выбираются стабильно по id (без случайности).
 // Позже сюда же можно подставить свои фото/видео.
 
+import { asset } from "../lib/assets";
+
 type Props = {
   id: string;
   className?: string;
@@ -38,7 +40,7 @@ export function WorkoutArt({ id, className }: Props) {
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={`/covers/${photo}.jpg`}
+        src={asset(`/covers/${photo}.jpg`)}
         alt=""
         loading="lazy"
         className="h-full w-full object-cover"
