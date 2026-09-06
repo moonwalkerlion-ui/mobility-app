@@ -22,6 +22,8 @@
 ## Контекст проекта
 - Это Telegram Mini App для домашних тренировок и mobility, аудитория — русскоязычная СНГ
 - Стек: Next.js 16 (App Router) + TypeScript + Tailwind + `@telegram-apps/sdk-react`
-- Деплой: Cloudflare Pages (статический экспорт)
+- Деплой: GitHub Pages (статический экспорт), автосборка через GitHub Actions.
+  Адрес: https://moonwalkerlion-ui.github.io/mobility-app/ — сайт в подпапке,
+  поэтому пути к файлам из `public/` идут через `asset()` (`app/lib/assets.ts`)
 - БД: пока Telegram CloudStorage, без бэкенда
 - Платежи: руками первые месяцы, потом Tribute

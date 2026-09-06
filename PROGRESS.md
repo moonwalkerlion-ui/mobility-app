@@ -12,7 +12,8 @@ Telegram Mini App для домашних тренировок и mobility (по
 - **Next.js 16 (App Router) + TypeScript + Tailwind 4** — основа.
 - **`@telegram-apps/sdk-react`** — работа с Telegram Mini App (данные пользователя и т.д.).
 - **Статический экспорт** (`output: "export"` в `next.config.ts`) — потому что деплой на
-  **Cloudflare Pages**, там нет Node-сервера. Из-за этого:
+  **GitHub Pages** (решение от 2026-09-06, раньше планировали Cloudflare), там нет
+  Node-сервера. Из-за этого:
   - картинки без оптимизации (`images.unoptimized`),
   - `trailingSlash: true` (адреса вида `/page/`),
   - **нельзя** использовать серверные фичи Next (Route Handlers, Server Actions, SSR).
@@ -107,7 +108,19 @@ Telegram не проверялось. Плагин `frontend-design` устан�
       ⚠️ Перед публикацией проверить лицензии / заменить на свои фото/видео.
 - [ ] Реальные видео упражнений (+ оверлеи из Этапа 6.5)
 
-**Этап 8 — Деплой (Cloudflare Pages) + оплата** (вручную → Tribute)
+**Этап 8 — Деплой + оплата**
+- [x] **Хостинг сменили на GitHub Pages** (не Cloudflare): аккаунт уже был, лишних сервисов
+      не заводим. Репозиторий сделали публичным — на бесплатном тарифе Pages иначе не работает.
+- [x] Сайт: **https://moonwalkerlion-ui.github.io/mobility-app/** — обновляется сам при
+      `git push` в `main` (`.github/workflows/deploy.yml`).
+- [x] Грабли подпапки решены: `basePath`/`assetPrefix` из `NEXT_PUBLIC_BASE_PATH` (локальный
+      `npm run dev` не меняется), пути к `public/` через `asset()` в `app/lib/assets.ts`,
+      `.nojekyll` в сборке (иначе Pages выбрасывает `_next` и сайт открывается без стилей).
+- ⚠️ `git push` из терминала: связка ключей macOS отдаёт старый токен → 403. Рабочая команда:
+      `git -c credential.helper='!gh auth git-credential' push origin main`
+- [ ] Бот в @BotFather: создать, привесить Mini App на адрес выше → проверить этап 6
+      (кнопка «Назад», разворот, вибро, CloudStorage) внутри реального Telegram
+- [ ] Оплата: вручную → Tribute
 
 ### Пул движений (стартовый)
 Становая тяга · Жим лёжа · Присед со штангой на спине · Фронтальный присед ·
